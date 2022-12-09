@@ -1,3 +1,4 @@
+import { IdeiaService } from './../ideia.service';
 import { Ideia } from './../ideia';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class ListarIdeiasComponent implements OnInit {
   listaIdeias: Ideia[] = [];
 
-  constructor() { }
+  constructor(private service: IdeiaService) { }
 
   ngOnInit(): void {
+    this.service.listar()
   }
 
 }
