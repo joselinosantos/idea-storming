@@ -1,0 +1,17 @@
+.card {
+    border-radius: 20px;
+}
+
+.btn {
+    border-radius: 50px;
+    margin-right: 5px;
+    color: #FFF;
+}
+
+.btn-excluir {
+    background-color: #C31952;
+}
+
+.btn-editar {
+    background-color: #CCC;
+}

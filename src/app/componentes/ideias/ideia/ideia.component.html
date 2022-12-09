@@ -1,0 +1,17 @@
+<div class="card {{ ideia.modelo }}">
+    <div class="card-body">
+        <p class="conteudo">{{ ideia.conteudo }}</p>
+        <p class="autor"><b>{{ ideia.autor }}</b></p>
+    </div>
+    <div class="card-footer">
+        <h5 class="card-title">Card title that wraps to a new line</h5>
+        <div class="acoes">
+            <button class="btn btn-editar" routerLink="/ideias/editar-ideia/{#{ideia.id}#}">
+                <i class="fa fa-edit"></i>
+            </button>
+            <button class="btn btn-excluir" routerLink="/ideias/excluir-ideia/{#{ideia.id}#}">
+                <i class="fa fa-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>
