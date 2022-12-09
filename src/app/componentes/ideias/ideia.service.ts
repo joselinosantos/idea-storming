@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ideia } from './ideia';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class IdeiaService {
 
   constructor(private http: HttpClient) { }
 
-  listar() {
+  listar(): Observable<Ideia[]> {
     return this.http.get<Ideia[]>(this.API)
   }
 }

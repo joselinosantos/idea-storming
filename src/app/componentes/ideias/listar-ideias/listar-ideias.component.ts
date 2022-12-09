@@ -13,7 +13,8 @@ export class ListarIdeiasComponent implements OnInit {
   constructor(private service: IdeiaService) { }
 
   ngOnInit(): void {
-    this.service.listar()
+    this.service.listar().subscribe((listaIdeias) => {
+      this.listaIdeias = listaIdeias
+    })
   }
-
 }
