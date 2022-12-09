@@ -13,10 +13,18 @@ export class CriarIdeiaComponent implements OnInit {
     autor: 'Eu mesmo',
     modelo: ''
   }
-  
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  criarIdeia() {
+    console.log('Criar ideia');
+  }
+
+  cancelar() {
+    console.log('Cancelar');
   }
 
 }
