@@ -1,0 +1,22 @@
+{
+    "ideias": [
+        {
+            "id": 1,
+            "conteudo": "Às vezes, até mesmo viver é um ato de coragem.",
+            "autoria": "Sêneca",
+            "modelo": "modelo1"
+        },
+        {
+            "id": 2,
+            "conteudo": "A melhor coisa da vida é saber que há alguém que ama tanto você",
+            "autoria": "Letra de música Catedral",
+            "modelo": "modelo2"
+        },
+        {
+            "id": 3,
+            "conteudo": "Sofremos mais na imaginação do que na realidade.",
+            "autoria": "Sêneca",
+            "modelo": "modelo3"
+        }
+    ]
+}
