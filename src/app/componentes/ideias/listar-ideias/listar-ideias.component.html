@@ -4,9 +4,13 @@
         <button class="btn" routerLink="/criar-ideia">Adicionar ideia</button>
     </header>
 
-    <div class="mural card-columns">
+    <div class="mural card-columns" *ngIf="listaIdeias.length > 0, else semIdeias">
         <div *ngFor="let ideia of listaIdeias">
             <app-ideia [ideia]="ideia"></app-ideia>
         </div>
     </div>
 </section>
+<ng-template #semIdeias>
+    <div class="sem-ideias">
+    <p class="lead">Ainda não há ideias cadastradas!</p>
+</div>
