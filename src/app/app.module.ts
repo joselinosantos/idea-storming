@@ -9,6 +9,7 @@ import { CriarIdeiaComponent } from './componentes/ideias/criar-ideia/criar-idei
 import { FormsModule } from '@angular/forms';
 import { ListarIdeiasComponent } from './componentes/ideias/listar-ideias/listar-ideias.component';
 import { IdeiaComponent } from './componentes/ideias/ideia/ideia.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { IdeiaComponent } from './componentes/ideias/ideia/ideia.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
