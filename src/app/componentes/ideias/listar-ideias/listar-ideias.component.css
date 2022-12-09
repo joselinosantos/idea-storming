@@ -1,0 +1,15 @@
+header.header {
+    text-align: center;
+}
+
+.header h2 {
+    color: #C31952;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #C31952;
+    color: #FFF;
+}
