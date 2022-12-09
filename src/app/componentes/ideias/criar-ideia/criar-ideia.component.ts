@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarIdeiaComponent implements OnInit {
 
+  ideia = {
+    id: '1',
+    conteudo: 'Minha ideia',
+    autor: 'Eu mesmo',
+    modelo: ''
+  }
+  
   constructor() { }
 
   ngOnInit(): void {

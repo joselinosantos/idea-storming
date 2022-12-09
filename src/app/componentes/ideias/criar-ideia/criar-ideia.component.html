@@ -10,6 +10,7 @@
         class="input"
         id="ideia"
         name="ideia"
+        [value]="ideia.conteudo"
         placeholder="Digite a Ideia"
         >
 
@@ -19,6 +20,7 @@
           class="input"
           id="autor"
           name="autor"
+          [value]="ideia.autor"
           placeholder="Digite o autor ou a fonte"
         >
 
@@ -39,8 +41,8 @@
                 </label>
                 Prévia
                 <div class="modelo modelo1">
-                    <p class="conteudo">Aqui vai o conteúdo</p>
-                    <p class="autor"><b>Aqui vai o autor</b></p>
+                    <p class="conteudo">{{ ideia.conteudo }}</p>
+                    <p class="autor"><b>{{ ideia.autor }}</b></p>
                 </div>
             </div>
             <div class="radio-modelo">
@@ -58,8 +60,8 @@
                 </label>
                 Prévia
                 <div class="modelo modelo2">
-                    <p class="conteudo">Aqui vai o conteúdo</p>
-                    <p class="autor"><b>Aqui vai o autor</b></p>
+                    <p class="conteudo">{{ ideia.conteudo }}</p>
+                    <p class="autor"><b>{{ ideia.autor }}</b></p>
                 </div>
             </div>
             <div class="radio-modelo">
@@ -77,8 +79,8 @@
                 </label>
                 Prévia
                 <div class="modelo modelo3">
-                    <p class="conteudo">Aqui vai o conteúdo</p>
-                    <p class="autor"><b>Aqui vai o autor</b></p>
+                    <p class="conteudo">{{ ideia.conteudo }}</p>
+                    <p class="autor"><b>{{ ideia.autor }}</b></p>
                 </div>
             </div>
         </div>
