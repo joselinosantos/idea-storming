@@ -4,9 +4,9 @@
         <button class="btn" routerLink="/criar-ideia">Adicionar ideia</button>
     </header>
 
-    <div class="mural">
-        <div class="card-columns">
-            <app-ideia></app-ideia>
+    <div class="mural card-columns">
+        <div *ngFor="let ideia of listaIdeias">
+            <app-ideia [ideia]="ideia"></app-ideia>
         </div>
     </div>
 </section>

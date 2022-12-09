@@ -1,5 +1,6 @@
 .header h2 {
     color: #C31952;
+    margin-bottom: 1em;
 }
 
 .btn {
@@ -7,4 +8,8 @@
     font-weight: bold;
     background-color: #C31952;
     color: #FFF;
+}
+
+.mural {
+    margin: 2em;
 }

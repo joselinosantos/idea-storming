@@ -1,5 +1,6 @@
 .card {
     border-radius: 20px;
+    border: none;
 }
 
 .btn {
@@ -14,4 +15,16 @@
 
 .btn-editar {
     background-color: #CCC;
+}
+
+.modelo1 {
+    background-color: #FFE2EB;
+}
+
+.modelo2 {
+    background-color: #DAFFF6;
+}
+
+.modelo3 {
+    background-color: #FFFD92;
 }

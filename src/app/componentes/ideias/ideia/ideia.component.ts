@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ideia',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ideia.component.css']
 })
 export class IdeiaComponent implements OnInit {
-  ideia = {
+  @Input() ideia = {
     conteudo: 'Angular',
     autor: 'JS',
     modelo: 'modelo3'
