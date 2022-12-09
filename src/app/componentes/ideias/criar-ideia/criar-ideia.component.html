@@ -10,7 +10,7 @@
         class="input"
         id="ideia"
         name="ideia"
-        [value]="ideia.conteudo"
+        [(ngModel)]="ideia.conteudo"
         placeholder="Digite a Ideia"
         >
 
@@ -20,7 +20,7 @@
           class="input"
           id="autor"
           name="autor"
-          [value]="ideia.autor"
+          [(ngModel)]="ideia.autor"
           placeholder="Digite o autor ou a fonte"
         >
 
