@@ -1,6 +1,7 @@
 import { IdeiaService } from './../ideia.service';
 import { Component, OnInit } from '@angular/core';
 import { Ideia } from '../ideia';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-ideia',
@@ -15,17 +16,19 @@ export class CriarIdeiaComponent implements OnInit {
     modelo: ''
   }
 
-  constructor(private service: IdeiaService) { }
+  constructor(private service: IdeiaService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   criarIdeia() {
-    this.service.criar(this.ideia).subscribe()
+    this.service.criar(this.ideia).subscribe(() => {
+      this.router.navigate(['/listar-ideias'])
+    })
   }
 
   cancelar() {
-    console.log('Cancelar');
+    this.router.navigate(['/listar-ideias'])
   }
 
 }
