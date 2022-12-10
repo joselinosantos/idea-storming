@@ -8,10 +8,9 @@ import { Ideia } from '../ideia';
 })
 export class IdeiaComponent implements OnInit {
   @Input() ideia: Ideia = {
-    id: 0,
-    conteudo: 'Aprendendo Angular',
-    autor: 'JS',
-    modelo: 'modelo3'
+    conteudo: '',
+    autor: '',
+    modelo: ''
   }
   constructor() { }
 

@@ -1,3 +1,4 @@
+import { IdeiaService } from './../ideia.service';
 import { Component, OnInit } from '@angular/core';
 import { Ideia } from '../ideia';
 
@@ -9,19 +10,18 @@ import { Ideia } from '../ideia';
 export class CriarIdeiaComponent implements OnInit {
 
   ideia: Ideia = {
-    id: 1,
-    conteudo: 'Minha ideia Angular',
-    autor: 'Eu mesmo',
-    modelo: 'modelo1'
+    conteudo: '',
+    autor: '',
+    modelo: ''
   }
 
-  constructor() { }
+  constructor(private service: IdeiaService) { }
 
   ngOnInit(): void {
   }
 
   criarIdeia() {
-    console.log('Criar ideia');
+    this.service.criar(this.ideia).subscribe()
   }
 
   cancelar() {

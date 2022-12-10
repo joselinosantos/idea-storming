@@ -14,4 +14,8 @@ export class IdeiaService {
   listar(): Observable<Ideia[]> {
     return this.http.get<Ideia[]>(this.API)
   }
+
+  criar(ideia: Ideia): Observable<Ideia> {
+    return this.http.post<Ideia>(this.API, ideia)
+  }
 }
