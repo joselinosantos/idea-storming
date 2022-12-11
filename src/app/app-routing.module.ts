@@ -1,3 +1,4 @@
+import { ExcluirIdeiaComponent } from './componentes/ideias/excluir-ideia/excluir-ideia.component';
 import { CriarIdeiaComponent } from './componentes/ideias/criar-ideia/criar-ideia.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'listar-ideias',
     component: ListarIdeiasComponent
+  },
+  {
+    path: 'ideias/excluir-ideia/:id',
+    component: ExcluirIdeiaComponent
   }
 ];
 

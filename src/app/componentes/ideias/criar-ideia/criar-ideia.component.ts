@@ -13,7 +13,7 @@ export class CriarIdeiaComponent implements OnInit {
   ideia: Ideia = {
     conteudo: '',
     autor: '',
-    modelo: ''
+    modelo: 'modelo1'
   }
 
   constructor(private service: IdeiaService, private router: Router) { }

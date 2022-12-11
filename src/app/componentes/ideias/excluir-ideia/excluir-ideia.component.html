@@ -1,0 +1,21 @@
+<section class="container excluir-ideia">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content shadow-sm border-0">
+            <div class="modal-header border-0 text-center">
+                <h5 class="modal-title">Tem certeza que quer deletar essa ideia?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cancelar()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row mb-2 text-center">
+                    <div class="acoes col-12 p-2">
+                        <button class="btn btn-danger mr-3 botao-excluir" (click)="excluirIdeia()">Excluir</button>
+                        <button class="btn botao-cancelar" (click)="cancelar()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

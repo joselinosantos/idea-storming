@@ -18,4 +18,14 @@ export class IdeiaService {
   criar(ideia: Ideia): Observable<Ideia> {
     return this.http.post<Ideia>(this.API, ideia)
   }
+
+  excluir(id: number): Observable<Ideia> {
+    const url = `${this.API}/${id}`
+    return this.http.delete<Ideia>(url)
+  }
+
+  buscarPorId(id: number): Observable<Ideia> {
+    const url = `${this.API}/${id}`
+    return this.http.get<Ideia>(url)
+  }
 }

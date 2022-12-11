@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ListarIdeiasComponent } from './componentes/ideias/listar-ideias/listar-ideias.component';
 import { IdeiaComponent } from './componentes/ideias/ideia/ideia.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ExcluirIdeiaComponent } from './componentes/ideias/excluir-ideia/excluir-ideia.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     CriarIdeiaComponent,
     ListarIdeiasComponent,
-    IdeiaComponent
+    IdeiaComponent,
+    ExcluirIdeiaComponent
   ],
   imports: [
     BrowserModule,
