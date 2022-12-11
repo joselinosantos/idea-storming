@@ -24,6 +24,11 @@ export class IdeiaService {
     return this.http.delete<Ideia>(url)
   }
 
+  editar(ideia: Ideia): Observable<Ideia> {
+    const url = `${this.API}/${ideia.id}`
+    return this.http.put<Ideia>(url, ideia )
+  }
+
   buscarPorId(id: number): Observable<Ideia> {
     const url = `${this.API}/${id}`
     return this.http.get<Ideia>(url)
