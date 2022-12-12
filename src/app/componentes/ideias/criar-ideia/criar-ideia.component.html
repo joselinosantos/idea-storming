@@ -12,6 +12,9 @@
         formControlName="conteudo"
         placeholder="Digite a Ideia"
         >
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('conteudo')?.errors && formulario.get('conteudo')?.touched">
+            O campo Ideia é obrigatório!
+        </div>
 
         <label for="autor">Autor ou fonte</label>
         <input
@@ -21,6 +24,12 @@
           formControlName="autor"
           placeholder="Digite o autor ou a fonte"
         >
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('autor')?.errors?.['required'] && formulario.get('autor')?.touched">
+            O campo Autor é obrigatório!
+        </div>
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('autor')?.errors?.['minlength'] && formulario.get('autor')?.touched">
+            O campo Autor precisa ter no mínimo 3 caracteres!
+        </div>
 
         <label for="modelo">Selecione o modelo do card</label>
         <div class="container-radio">
