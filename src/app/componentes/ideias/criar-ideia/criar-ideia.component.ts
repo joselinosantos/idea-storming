@@ -2,7 +2,7 @@ import { IdeiaService } from './../ideia.service';
 import { Component, OnInit } from '@angular/core';
 import { Ideia } from '../ideia';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-criar-ideia',
@@ -21,16 +21,18 @@ export class CriarIdeiaComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      conteudo: ['Reactive forms Angular'],
-      autor: ['Dev JS'],
+      conteudo: ['', [Validators.required]],
+      autor: ['', [Validators.required]],
       modelo: ['modelo1']
     })
   }
 
   criarIdeia() {
-    this.service.criar(this.formulario.value).subscribe(() => {
-      this.router.navigate(['/listar-ideias'])
-    })
+if(this.formulario.valid) {
+      this.service.criar(this.formulario.value).subscribe(() => {
+        this.router.navigate(['/listar-ideias'])
+      })
+    }
   }
 
   cancelar() {
