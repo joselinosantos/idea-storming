@@ -2,6 +2,7 @@ import { IdeiaService } from './../ideia.service';
 import { Component, OnInit } from '@angular/core';
 import { Ideia } from '../ideia';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-criar-ideia',
@@ -10,19 +11,24 @@ import { Router } from '@angular/router';
 })
 export class CriarIdeiaComponent implements OnInit {
 
-  ideia: Ideia = {
-    conteudo: '',
-    autor: '',
-    modelo: 'modelo1'
-  }
+  formulario!: FormGroup;
 
-  constructor(private service: IdeiaService, private router: Router) { }
+  constructor(
+    private service: IdeiaService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      conteudo: ['Reactive forms Angular'],
+      autor: ['Dev JS'],
+      modelo: ['modelo1']
+    })
   }
 
   criarIdeia() {
-    this.service.criar(this.ideia).subscribe(() => {
+    this.service.criar(this.formulario.value).subscribe(() => {
       this.router.navigate(['/listar-ideias'])
     })
   }

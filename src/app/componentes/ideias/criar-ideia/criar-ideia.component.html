@@ -3,14 +3,13 @@
         <h2 class="txt-red">Adicione uma Nova ideia</h2>
     </header>
 
-    <form class="shadow-sm">
+    <form class="shadow-sm" [formGroup]="formulario">
         <label for="ideia">Ideia</label>
         <input
         type="textarea"
         class="input"
         id="ideia"
-        name="ideia"
-        [(ngModel)]="ideia.conteudo"
+        formControlName="conteudo"
         placeholder="Digite a Ideia"
         >
 
@@ -19,8 +18,7 @@
           type="text"
           class="input"
           id="autor"
-          name="autor"
-          [(ngModel)]="ideia.autor"
+          formControlName="autor"
           placeholder="Digite o autor ou a fonte"
         >
 
@@ -32,8 +30,7 @@
                         type="radio"
                         id="modelo1"
                         value="modelo1"
-                        [(ngModel)]="ideia.modelo"
-                        name="modelo-card"
+                        formControlName="modelo"
                     >
                     <div class="custom-radio">
                         <span></span>
@@ -42,8 +39,8 @@
                 </label>
                 Prévia
                 <div class="modelo modelo1">
-                    <p class="conteudo">{{ ideia.conteudo }}</p>
-                    <p class="autor"><b>{{ ideia.autor }}</b></p>
+                    <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                    <p class="autor"><b>{{ formulario.get('autor')?.value }}</b></p>
                 </div>
             </div>
             <div class="radio-modelo">
@@ -52,8 +49,7 @@
                         type="radio"
                         id="modelo2"
                         value="modelo2"
-                        [(ngModel)]="ideia.modelo"
-                        name="modelo-card"
+                        formControlName="modelo"
                     >
                     <div class="custom-radio">
                         <span></span>
@@ -62,8 +58,8 @@
                 </label>
                 Prévia
                 <div class="modelo modelo2">
-                    <p class="conteudo">{{ ideia.conteudo }}</p>
-                    <p class="autor"><b>{{ ideia.autor }}</b></p>
+                    <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                    <p class="autor"><b>{{ formulario.get('autor')?.value }}</b></p>
                 </div>
             </div>
             <div class="radio-modelo">
@@ -72,8 +68,7 @@
                         type="radio"
                         id="modelo3"
                         value="modelo3"
-                        [(ngModel)]="ideia.modelo"
-                        name="modelo-card"
+                        formControlName="modelo"
                     >
                     <div class="custom-radio">
                         <span></span>
@@ -82,8 +77,8 @@
                 </label>
                 Prévia
                 <div class="modelo modelo3">
-                    <p class="conteudo">{{ ideia.conteudo }}</p>
-                    <p class="autor"><b>{{ ideia.autor }}</b></p>
+                    <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                    <p class="autor"><b>{{ formulario.get('autor')?.value }}</b></p>
                 </div>
             </div>
         </div>

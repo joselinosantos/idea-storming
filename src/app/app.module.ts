@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { CriarIdeiaComponent } from './componentes/ideias/criar-ideia/criar-ideia.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarIdeiasComponent } from './componentes/ideias/listar-ideias/listar-ideias.component';
 import { IdeiaComponent } from './componentes/ideias/ideia/ideia.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,7 +28,8 @@ import { EditarIdeiaComponent } from './componentes/ideias/editar-ideia/editar-i
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
