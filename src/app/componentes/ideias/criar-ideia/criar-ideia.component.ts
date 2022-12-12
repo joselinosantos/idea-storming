@@ -27,7 +27,7 @@ export class CriarIdeiaComponent implements OnInit {
     })
   }
 
-  criarIdeia() {    
+  criarIdeia() {
     if(this.formulario.valid) {
       this.service.criar(this.formulario.value).subscribe(() => {
         this.router.navigate(['/listar-ideias'])
@@ -37,6 +37,13 @@ export class CriarIdeiaComponent implements OnInit {
 
   cancelar() {
     this.router.navigate(['/listar-ideias'])
+  }
+
+  habilitarBtn(): string {
+    if (this.formulario.valid) {
+      return 'btn-salva'
+    }
+    return ''
   }
 
 }
