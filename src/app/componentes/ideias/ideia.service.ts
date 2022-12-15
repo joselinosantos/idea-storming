@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Ideia } from './ideia';
 import { Observable } from 'rxjs';
 
@@ -11,8 +11,12 @@ export class IdeiaService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<Ideia[]> {
-    return this.http.get<Ideia[]>(this.API)
+  listar(pagina: number): Observable<Ideia[]> {
+    const itensPagina = 6
+    let params = new HttpParams().set("_page", pagina).set("_limit", itensPagina)
+
+    // return this.http.get<Ideia[]>(`${this.API}?_page=${pagina}&_limit=${itensPagina}`)
+    return this.http.get<Ideia[]>(this.API, {params})
   }
 
   criar(ideia: Ideia): Observable<Ideia> {

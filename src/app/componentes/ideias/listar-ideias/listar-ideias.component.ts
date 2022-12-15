@@ -9,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarIdeiasComponent implements OnInit {
   listaIdeias: Ideia[] = [];
+  paginaAtual:number = 1
 
   constructor(private service: IdeiaService) { }
 
   ngOnInit(): void {
-    this.service.listar().subscribe((listaIdeias) => {
+    this.service.listar(this.paginaAtual).subscribe((listaIdeias) => {
       this.listaIdeias = listaIdeias
     })
   }
