@@ -3,6 +3,10 @@
     border: none;
 }
 
+.card-footer {
+    background: none;
+}
+
 .btn {
     border-radius: 50px;
     margin-right: 5px;

@@ -3,26 +3,39 @@
         <h2 class="txt-red">Altere os dados da ideia</h2>
     </header>
 
-    <form class="shadow-sm">
+    <form class="shadow-sm" [formGroup]="formulario"  *ngIf="formulario">
         <label for="ideia">Ideia</label>
         <input
         type="textarea"
         class="input"
         id="ideia"
-        name="ideia"
-        [(ngModel)]="ideia.conteudo"
+        formControlName="conteudo"
         placeholder="Digite a Ideia"
         >
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('conteudo')?.errors && formulario.get('conteudo')?.touched">
+            O campo Ideia é obrigatório!
+        </div>
 
         <label for="autor">Autor ou fonte</label>
         <input
           type="text"
           class="input"
           id="autor"
-          name="autor"
-          [(ngModel)]="ideia.autor"
+          formControlName="autor"
           placeholder="Digite o autor ou a fonte"
         >
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('autor')?.errors?.['required'] && formulario.get('autor')?.touched">
+            O campo Autor é obrigatório!
+        </div>
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('autor')?.errors?.['minlength'] && formulario.get('autor')?.touched">
+            O campo Autor precisa ter no mínimo 3 caracteres!
+        </div>
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('autor')?.errors?.['minusculo'] && formulario.get('autor')?.touched">
+            O campo Autor não pode ter todos os caracteres minúsculos!
+        </div>
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('autor')?.errors?.['maiusculo'] && formulario.get('autor')?.touched">
+            O campo Autor não pode ter todos os caracteres maiúsculos!
+        </div>
 
         <label for="modelo">Selecione o modelo do card</label>
         <div class="container-radio">
@@ -32,8 +45,7 @@
                         type="radio"
                         id="modelo1"
                         value="modelo1"
-                        [(ngModel)]="ideia.modelo"
-                        name="modelo-card"
+                        formControlName="modelo"
                     >
                     <div class="custom-radio">
                         <span></span>
@@ -42,8 +54,8 @@
                 </label>
                 Prévia
                 <div class="modelo modelo1">
-                    <p class="conteudo">{{ ideia.conteudo }}</p>
-                    <p class="autor"><b>{{ ideia.autor }}</b></p>
+                    <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                    <p class="autor"><b>{{ formulario.get('autor')?.value }}</b></p>
                 </div>
             </div>
             <div class="radio-modelo">
@@ -52,8 +64,7 @@
                         type="radio"
                         id="modelo2"
                         value="modelo2"
-                        [(ngModel)]="ideia.modelo"
-                        name="modelo-card"
+                        formControlName="modelo"
                     >
                     <div class="custom-radio">
                         <span></span>
@@ -62,8 +73,8 @@
                 </label>
                 Prévia
                 <div class="modelo modelo2">
-                    <p class="conteudo">{{ ideia.conteudo }}</p>
-                    <p class="autor"><b>{{ ideia.autor }}</b></p>
+                    <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                    <p class="autor"><b>{{ formulario.get('autor')?.value }}</b></p>
                 </div>
             </div>
             <div class="radio-modelo">
@@ -72,8 +83,7 @@
                         type="radio"
                         id="modelo3"
                         value="modelo3"
-                        [(ngModel)]="ideia.modelo"
-                        name="modelo-card"
+                        formControlName="modelo"
                     >
                     <div class="custom-radio">
                         <span></span>
@@ -82,13 +92,18 @@
                 </label>
                 Prévia
                 <div class="modelo modelo3">
-                    <p class="conteudo">{{ ideia.conteudo }}</p>
-                    <p class="autor"><b>{{ ideia.autor }}</b></p>
+                    <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                    <p class="autor"><b>{{ formulario.get('autor')?.value }}</b></p>
                 </div>
             </div>
         </div>
         <div class="acoes">
-            <button type="button" class="btn btn-salva mr-2" (click)="editarIdeia()">Salvar</button>
+            <button
+            type="button"
+            class="btn mr-2"
+            (click)="editarIdeia()"
+            [disabled]="!formulario.valid"
+            ngClass="habilitarBtn()">Salvar</button>
             <button type="button" class="btn btn-cancelar" (click)="cancelar()">Cancelar</button>
         </div>
     </form>

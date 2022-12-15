@@ -30,6 +30,9 @@
         <div class="alert alert-light text-danger" *ngIf="formulario.get('autor')?.errors?.['minlength'] && formulario.get('autor')?.touched">
             O campo Autor precisa ter no mínimo 3 caracteres!
         </div>
+        <div class="alert alert-light text-danger" *ngIf="formulario.get('autor')?.errors?.['minusculo'] && formulario.get('autor')?.touched">
+            O campo Autor não pode ter todos os caracteres minúsculos!
+        </div>
 
         <label for="modelo">Selecione o modelo do card</label>
         <div class="container-radio">

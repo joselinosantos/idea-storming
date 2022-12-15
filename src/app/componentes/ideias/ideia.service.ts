@@ -25,6 +25,8 @@ export class IdeiaService {
   }
 
   editar(ideia: Ideia): Observable<Ideia> {
+    console.log(ideia);
+    
     const url = `${this.API}/${ideia.id}`
     return this.http.put<Ideia>(url, ideia )
   }

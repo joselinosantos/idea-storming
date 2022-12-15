@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Ideia } from '../ideia';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { minusculoValidator } from './minusculoValidators';
 
 @Component({
   selector: 'app-criar-ideia',
@@ -22,7 +23,7 @@ export class CriarIdeiaComponent implements OnInit {
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       conteudo: ['', Validators.compose([Validators.required, Validators.pattern(/(.|\s)*\S(.|\s)*/)])],
-      autor: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      autor: ['', Validators.compose([Validators.required, Validators.minLength(3), minusculoValidator])],
       modelo: ['modelo1']
     })
   }
@@ -41,7 +42,7 @@ export class CriarIdeiaComponent implements OnInit {
 
   habilitarBtn(): string {
     if (this.formulario.valid) {
-      return 'btn-salva'
+      return 'btn'
     }
     return ''
   }
