@@ -1,0 +1,15 @@
+.btn-carregar {
+    width: 100%;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #C31952;
+    color: #FFF;
+}
+
+.sem-mais-ideias {
+    text-align: center;
+}

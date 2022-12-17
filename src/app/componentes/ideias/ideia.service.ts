@@ -28,9 +28,7 @@ export class IdeiaService {
     return this.http.delete<Ideia>(url)
   }
 
-  editar(ideia: Ideia): Observable<Ideia> {
-    console.log(ideia);
-    
+  editar(ideia: Ideia): Observable<Ideia> {    
     const url = `${this.API}/${ideia.id}`
     return this.http.put<Ideia>(url, ideia )
   }

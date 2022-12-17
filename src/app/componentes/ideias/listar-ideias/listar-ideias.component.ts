@@ -8,14 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-ideias.component.css']
 })
 export class ListarIdeiasComponent implements OnInit {
-  listaIdeias: Ideia[] = [];
-  paginaAtual:number = 1
+  listaIdeias: Ideia[] = []
+  paginaAtual: number = 1
+  haMaisIdeias: boolean = true
 
   constructor(private service: IdeiaService) { }
 
   ngOnInit(): void {
     this.service.listar(this.paginaAtual).subscribe((listaIdeias) => {
       this.listaIdeias = listaIdeias
+    })
+  }
+
+  carregarMaisIdeias() {
+    this.service.listar(++this.paginaAtual)
+    .subscribe(listaIdeias => {
+      this.listaIdeias.push(...listaIdeias)
+      if (!listaIdeias.length) {
+        this.haMaisIdeias = false
+      }
     })
   }
 }

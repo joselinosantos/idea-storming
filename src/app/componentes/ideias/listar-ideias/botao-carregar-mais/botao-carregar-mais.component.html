@@ -1,0 +1,8 @@
+<div class="btn-carregar" *ngIf="haMaisIdeias; else semMaisIdeias">
+    <button class="btn">Carregar mais</button>
+</div>
+
+<ng-template #semMaisIdeias>
+    <div class="sem-mais-ideias">
+    <p class="lead">Não há mais ideias para exibir</p>
+</div>

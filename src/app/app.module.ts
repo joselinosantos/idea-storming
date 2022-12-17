@@ -12,6 +12,7 @@ import { IdeiaComponent } from './componentes/ideias/ideia/ideia.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExcluirIdeiaComponent } from './componentes/ideias/excluir-ideia/excluir-ideia.component';
 import { EditarIdeiaComponent } from './componentes/ideias/editar-ideia/editar-ideia.component';
+import { BotaoCarregarMaisComponent } from './componentes/ideias/listar-ideias/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditarIdeiaComponent } from './componentes/ideias/editar-ideia/editar-i
     ListarIdeiasComponent,
     IdeiaComponent,
     ExcluirIdeiaComponent,
-    EditarIdeiaComponent
+    EditarIdeiaComponent,
+    BotaoCarregarMaisComponent
   ],
   imports: [
     BrowserModule,

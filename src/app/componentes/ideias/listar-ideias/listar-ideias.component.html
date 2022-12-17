@@ -10,6 +10,12 @@
         </div>
     </div>
 </section>
+
+<app-botao-carregar-mais
+[haMaisIdeias]="haMaisIdeias"
+(click)="carregarMaisIdeias()">
+</app-botao-carregar-mais>
+
 <ng-template #semIdeias>
     <div class="sem-ideias">
     <p class="lead">Ainda não há ideias cadastradas!</p>
