@@ -11,10 +11,13 @@ export class IdeiaService {
 
   constructor(private http: HttpClient) { }
 
-  listar(pagina: number): Observable<Ideia[]> {
+  listar(pagina: number, filtro: string): Observable<Ideia[]> {
     const itensPagina = 6
     let params = new HttpParams().set("_page", pagina).set("_limit", itensPagina)
 
+    if (filtro.trim().length > 2) {
+      params = params.set("q", filtro)
+    }
     // return this.http.get<Ideia[]>(`${this.API}?_page=${pagina}&_limit=${itensPagina}`)
     return this.http.get<Ideia[]>(this.API, {params})
   }

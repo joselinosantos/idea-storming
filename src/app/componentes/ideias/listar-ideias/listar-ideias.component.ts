@@ -11,17 +11,24 @@ export class ListarIdeiasComponent implements OnInit {
   listaIdeias: Ideia[] = []
   paginaAtual: number = 1
   haMaisIdeias: boolean = true
+  filtro: string = ''
 
   constructor(private service: IdeiaService) { }
 
   ngOnInit(): void {
-    this.service.listar(this.paginaAtual).subscribe((listaIdeias) => {
+    this.service.listar(this.paginaAtual, this.filtro).subscribe((listaIdeias) => {
+      this.listaIdeias = listaIdeias
+    })
+  }
+
+  pesquisarIdeias() {
+    this.service.listar(this.paginaAtual, this.filtro).subscribe(listaIdeias => {
       this.listaIdeias = listaIdeias
     })
   }
 
   carregarMaisIdeias() {
-    this.service.listar(++this.paginaAtual)
+    this.service.listar(++this.paginaAtual, this.filtro)
     .subscribe(listaIdeias => {
       this.listaIdeias.push(...listaIdeias)
       if (!listaIdeias.length) {

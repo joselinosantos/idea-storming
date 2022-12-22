@@ -1,4 +1,18 @@
 <section class="container">
+    <div class="area-search input-group">
+        <input
+        type="search"
+        class="form-control shadow-none"
+        placeholder="Pesquise uma ideia"
+        autofocus
+        [(ngModel)]="filtro"
+        (keyup)="pesquisarIdeias()">
+        <div class="input-group-append">
+            <button type="submit" class="btn input-group-text rounded-circle"><i
+                class="fa fa-search"></i></button>
+        </div>
+    </div>
+
     <header class="header text-center">
         <h2>Meu Mural</h2>
         <button class="btn" routerLink="/criar-ideia">Adicionar ideia</button>
