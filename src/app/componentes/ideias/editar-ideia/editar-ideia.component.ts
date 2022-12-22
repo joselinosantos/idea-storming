@@ -29,7 +29,8 @@ export class EditarIdeiaComponent implements OnInit {
         id: [ideia.id],
         conteudo: [ideia.conteudo, Validators.compose([Validators.required, Validators.pattern(/(.|\s)*\S(.|\s)*/)])],
         autor: [ideia.autor, Validators.compose([Validators.required, Validators.minLength(3), minusculoValidator, maiusculoValidator])],
-        modelo: [ideia.modelo]
+        modelo: [ideia.modelo],
+        favorito: [ideia.favorito]
       })
     })
   }

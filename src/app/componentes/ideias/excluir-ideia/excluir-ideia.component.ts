@@ -13,7 +13,8 @@ export class ExcluirIdeiaComponent implements OnInit {
     id: 0,
     conteudo: '',
     autor: '',
-    modelo: ''
+    modelo: '',
+    favorito: false
   }
   constructor(private service: IdeiaService, private router: Router, private route: ActivatedRoute) { }
 

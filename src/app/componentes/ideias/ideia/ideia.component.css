@@ -13,8 +13,13 @@
     color: #FFF;
 }
 
-.btn-excluir {
+.btn-excluir, .btn-favoritar {
     background-color: #C31952;
+}
+
+.btn-favoritar {
+    color: #C31952;
+    background-color: #FFE2EB;
 }
 
 .btn-editar {
