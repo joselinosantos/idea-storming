@@ -11,7 +11,7 @@ export class IdeiaService {
 
   constructor(private http: HttpClient) { }
 
-  listar(pagina: number, filtro: string): Observable<Ideia[]> {
+  listar(pagina: number, filtro: string, favoritos: boolean): Observable<Ideia[]> {
     const itensPagina = 6
     let params = new HttpParams()
     .set("_page", pagina)
@@ -19,23 +19,13 @@ export class IdeiaService {
 
     if (filtro.trim().length > 2) {
       params = params.set("q", filtro)
+    }
+
+    if (favoritos) {
+      params = params.set("favorito", true)
     }
 
     // return this.http.get<Ideia[]>(`${this.API}?_page=${pagina}&_limit=${itensPagina}`)
-    return this.http.get<Ideia[]>(this.API, {params})
-  }
-
-  listarFavoritas(pagina: number, filtro: string): Observable<Ideia[]> {
-    const itensPagina = 6
-    let params = new HttpParams()
-    .set("_page", pagina)
-    .set("_limit", itensPagina)
-    .set("favorito", true)
-
-    if (filtro.trim().length > 2) {
-      params = params.set("q", filtro)
-    }
-
     return this.http.get<Ideia[]>(this.API, {params})
   }
 
