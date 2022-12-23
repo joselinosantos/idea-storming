@@ -15,6 +15,7 @@ export class ListarIdeiasComponent implements OnInit {
   filtro: string = ''
   favoritos: boolean = false
   listaFavoritos: Ideia[] = [];
+  titulo: string = 'Meu mural'
 
   constructor(private service: IdeiaService, private router: Router) { }
 
@@ -46,6 +47,8 @@ export class ListarIdeiasComponent implements OnInit {
     this.favoritos = true
     this.haMaisIdeias = true
     this.paginaAtual = 1
+    this.titulo = 'Meus favoritos'
+
     this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
     .subscribe((listaIdeiasFavoritas) => {
       this.listaIdeias = listaIdeiasFavoritas
