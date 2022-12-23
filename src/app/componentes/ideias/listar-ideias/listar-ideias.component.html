@@ -22,7 +22,9 @@
 
     <div class="mural card-columns" *ngIf="listaIdeias.length > 0, else semIdeias">
         <div *ngFor="let ideia of listaIdeias">
-            <app-ideia [ideia]="ideia"></app-ideia>
+            <app-ideia
+             [ideia]="ideia"
+             [listaFavoritos]="listaFavoritos"></app-ideia>
         </div>
     </div>
 </section>

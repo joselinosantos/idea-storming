@@ -13,6 +13,7 @@ export class ListarIdeiasComponent implements OnInit {
   haMaisIdeias: boolean = true
   filtro: string = ''
   favoritos: boolean = false
+  listaFavoritos: Ideia[] = [];
 
   constructor(private service: IdeiaService) { }
 
@@ -49,6 +50,7 @@ export class ListarIdeiasComponent implements OnInit {
     this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
     .subscribe((listaIdeiasFavoritas) => {
       this.listaIdeias = listaIdeiasFavoritas
+      this.listaFavoritos = listaIdeiasFavoritas
     })
   }
 }
