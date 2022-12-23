@@ -5,7 +5,7 @@
       "conteudo": "Criar App Angular",
       "autor": "Dev JS",
       "modelo": "modelo3",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "conteudo": "Uma mesa numa padaria que contém uma tela",
       "autor": "Dev JS",
       "modelo": "modelo1",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 5,

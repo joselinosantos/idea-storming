@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { IdeiaService } from './../ideia.service';
 import { Ideia } from './../ideia';
 import { Component, OnInit } from '@angular/core';
@@ -15,11 +16,9 @@ export class ListarIdeiasComponent implements OnInit {
   favoritos: boolean = false
   listaFavoritos: Ideia[] = [];
 
-  constructor(private service: IdeiaService) { }
+  constructor(private service: IdeiaService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log('ok');
-    
     this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
     .subscribe((listaIdeias) => {
       this.listaIdeias = listaIdeias
@@ -52,5 +51,13 @@ export class ListarIdeiasComponent implements OnInit {
       this.listaIdeias = listaIdeiasFavoritas
       this.listaFavoritos = listaIdeiasFavoritas
     })
+  }
+
+  recarregarComponente() {
+    this.favoritos = false
+    this.paginaAtual = 1
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false
+    this.router.onSameUrlNavigation = 'reload'
+    this.router.navigate([this.router.url])
   }
 }
