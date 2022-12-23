@@ -36,4 +36,12 @@ export class ListarIdeiasComponent implements OnInit {
       }
     })
   }
+
+  listarFavoritas() {
+    this.haMaisIdeias = true
+    this.paginaAtual = 1
+    this.service.listarFavoritas(this.paginaAtual, this.filtro).subscribe(listaIdeiasFavoritas => {
+      this.listaIdeias = listaIdeiasFavoritas
+    })
+  }
 }

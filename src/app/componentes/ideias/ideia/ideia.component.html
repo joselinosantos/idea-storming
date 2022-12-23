@@ -5,7 +5,7 @@
     </div>
     <div class="card-footer">
         <div class="acoes">
-            <button class="btn btn-favoritar" routerLink="/ideias/favoritar-ideia/{{ideia.id}}">
+            <button class="btn btn-favoritar" (click)="atualizarFavorito()">
                 <i class="fa fa-heart{{ mudarIconeFavorito() }}"></i>
             </button>
             <button class="btn btn-editar" routerLink="/ideias/editar-ideia/{{ideia.id}}">

@@ -5,7 +5,7 @@
       "conteudo": "Criar App Angular",
       "autor": "Dev JS",
       "modelo": "modelo3",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 2,
@@ -19,7 +19,7 @@
       "conteudo": "Um aplicativo para gerenciamento de imóveis",
       "autor": "Dev",
       "modelo": "modelo2",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 4,
@@ -88,7 +88,7 @@
       "conteudo": "A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica ",
       "autor": "Loren Ipsum",
       "modelo": "modelo3",
-      "favorito": false,
+      "favorito": true,
       "id": 13
     }
   ]

@@ -13,12 +13,29 @@ export class IdeiaService {
 
   listar(pagina: number, filtro: string): Observable<Ideia[]> {
     const itensPagina = 6
-    let params = new HttpParams().set("_page", pagina).set("_limit", itensPagina)
+    let params = new HttpParams()
+    .set("_page", pagina)
+    .set("_limit", itensPagina)
 
     if (filtro.trim().length > 2) {
       params = params.set("q", filtro)
     }
+
     // return this.http.get<Ideia[]>(`${this.API}?_page=${pagina}&_limit=${itensPagina}`)
+    return this.http.get<Ideia[]>(this.API, {params})
+  }
+
+  listarFavoritas(pagina: number, filtro: string): Observable<Ideia[]> {
+    const itensPagina = 6
+    let params = new HttpParams()
+    .set("_page", pagina)
+    .set("_limit", itensPagina)
+    .set("favorito", true)
+
+    if (filtro.trim().length > 2) {
+      params = params.set("q", filtro)
+    }
+
     return this.http.get<Ideia[]>(this.API, {params})
   }
 
@@ -33,11 +50,16 @@ export class IdeiaService {
 
   editar(ideia: Ideia): Observable<Ideia> {    
     const url = `${this.API}/${ideia.id}`
-    return this.http.put<Ideia>(url, ideia )
+    return this.http.put<Ideia>(url, ideia)
   }
 
   buscarPorId(id: number): Observable<Ideia> {
     const url = `${this.API}/${id}`
     return this.http.get<Ideia>(url)
+  }
+
+  mudarFavorito(ideia: Ideia): Observable<Ideia> {
+    ideia.favorito = !ideia.favorito
+    return this.editar(ideia)
   }
 }

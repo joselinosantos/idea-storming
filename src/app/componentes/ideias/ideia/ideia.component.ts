@@ -1,3 +1,4 @@
+import { IdeiaService } from './../ideia.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Ideia } from '../ideia';
 
@@ -13,7 +14,7 @@ export class IdeiaComponent implements OnInit {
     modelo: '',
     favorito: false
   }
-  constructor() { }
+  constructor(private service: IdeiaService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +24,10 @@ export class IdeiaComponent implements OnInit {
       return '-o'
     }
     return ''
+  }
+
+  atualizarFavorito() {
+    this.service.mudarFavorito(this.ideia).subscribe()
   }
 
 }
