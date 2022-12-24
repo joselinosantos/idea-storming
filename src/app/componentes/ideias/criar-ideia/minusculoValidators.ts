@@ -2,7 +2,7 @@ import { AbstractControl } from "@angular/forms";
 
 export function minusculoValidator(control: AbstractControl) {
     const autor = control.value as string;
-    if (autor === autor?.toLowerCase()) {
+    if (autor.length > 0 && autor === autor?.toLowerCase()) {
         return {minusculo: true}
     } else {
         return null

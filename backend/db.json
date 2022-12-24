@@ -1,17 +1,10 @@
 {
   "ideias": [
     {
-      "id": 1,
-      "conteudo": "Criar App Angular",
-      "autor": "Dev JS",
-      "modelo": "modelo3",
-      "favorito": false
-    },
-    {
       "id": 2,
       "conteudo": "Um App para eliminar os cardápios dos restaurantes",
       "autor": "App",
-      "modelo": "modelo2",
+      "modelo": "modelo1",
       "favorito": true
     },
     {
@@ -25,8 +18,8 @@
       "id": 4,
       "conteudo": "Uma mesa numa padaria que contém uma tela",
       "autor": "Dev JS",
-      "modelo": "modelo1",
-      "favorito": false
+      "modelo": "modelo2",
+      "favorito": true
     },
     {
       "id": 5,
@@ -41,13 +34,6 @@
       "modelo": "modelo1",
       "favorito": true,
       "id": 6
-    },
-    {
-      "id": 7,
-      "conteudo": "Outra ideia genial",
-      "autor": "Dev",
-      "modelo": "modelo3",
-      "favorito": false
     },
     {
       "conteudo": "A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica ",
@@ -74,7 +60,7 @@
       "conteudo": "A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica ",
       "autor": "Loren Ipsum",
       "modelo": "modelo1",
-      "favorito": true,
+      "favorito": false,
       "id": 11
     },
     {
@@ -90,6 +76,27 @@
       "modelo": "modelo3",
       "favorito": true,
       "id": 13
+    },
+    {
+      "conteudo": "Ideia",
+      "autor": "Autor",
+      "modelo": "modelo2",
+      "favorito": false,
+      "id": 14
+    },
+    {
+      "conteudo": "Ideia",
+      "autor": "Autor",
+      "modelo": "modelo3",
+      "favorito": false,
+      "id": 15
+    },
+    {
+      "conteudo": "Ideia Angular",
+      "autor": "Autor",
+      "modelo": "modelo3",
+      "favorito": false,
+      "id": 16
     }
   ]
 }
